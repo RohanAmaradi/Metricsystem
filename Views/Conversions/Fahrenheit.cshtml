@@ -1,0 +1,28 @@
+@model metricsystem.Models.TemperatureModel
+
+@{
+    ViewData["Title"] = "Fahrenheit to Celsius Conversion";
+}
+
+<h2>Fahrenheit to Celsius Conversion</h2>
+
+<form asp-action="Fahrenheit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-row mb-3">
+    <label asp-for="Fahrenheit">Fahrenheit Value:</label>
+    <input asp-for="Fahrenheit" class="form-control" />
+    
+</div>
+
+<div class="form-row mb-3">
+    <label asp-for="Celsius">Celsius Value:</label>
+    
+    <input asp-for="Celsius" class="form-control" readonly value="@Model.Celsius" />
+</div>
+
+    <div class="button-row">
+        <button type="submit" class="btn btn-primary">Convert</button>
+        <button asp-action="Clear" formmethod="post" class="btn btn-secondary">Clear</button>
+    </div>
+</form>

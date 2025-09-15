@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Metric System</title>
+
+    <!-- Bootstrap CSS (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Your site CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MetricSystem</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <!-- Left side menu -->
+            <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+
+                <!-- Length Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="lengthDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Length
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="lengthDropdown">
+                        <li><a class="dropdown-item" asp-controller="Conversions" asp-action="FeetToMeters">Feet → Meters</a></li>
+                        <li><a class="dropdown-item" asp-controller="Conversions" asp-action="InchesToCentimeters">Inches → Centimeters</a></li>
+                    </ul>
+                </li>
+
+                <!-- Volume Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="volumeDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Volume
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="volumeDropdown">
+                        <li><a class="dropdown-item" asp-controller="Conversions" asp-action="GallonsToLiters">Gallons → Liters</a></li>
+                        <li><a class="dropdown-item" asp-controller="Conversions" asp-action="QuartsToLiters">Quarts → Liters</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+            </ul>
+
+            <!-- Right side (Cart) -->
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-controller="Cart" asp-action="Index">
+                        <i class="fas fa-shopping-cart"></i> Cart
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    @RenderBody()
+</div>
+
+<!-- Bootstrap JS bundle (CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

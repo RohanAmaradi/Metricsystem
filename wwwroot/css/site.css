@@ -1,0 +1,25 @@
+/* site.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Home hero (background image: add /wwwroot/images/home-bg.jpg) */
+.home-hero {
+    background-color: #0275d8;  /* Bootstrap blue */
+    color: #fff;
+}
+
+/* Small tweaks for labels and spacing */
+.form-label {
+    font-weight: 600;
+}
+
+.validation-summary {
+    margin-bottom: 10px;
+}
+
+/* Make badge a little more visible (optional) */
+.navbar .badge {
+    font-size: 0.75rem;
+}
